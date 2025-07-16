@@ -1,0 +1,20 @@
+{
+  "name": "jazzy",
+  "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--privileged",
+    "--network=host"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}",
+  "mounts": [],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "postCreateCommand": "sudo usermod -aG video $(whoami)"
+}
